@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3400155A13E8E9AC007924CE /* MusicRapperApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 3400155913E8E9AC007924CE /* MusicRapperApplication.m */; };
+		347FAFC513E909D900795C4A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347FAFC413E909D900795C4A /* WebKit.framework */; };
+		347FAFC913E90C0B00795C4A /* gm-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 347FAFC813E90C0B00795C4A /* gm-icon.icns */; };
+		34B974D813F0C67000FE901E /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FB32CC13E8DC400039CAC9 /* AppKit.framework */; };
+		34B974D913F0C67100FE901E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FB32CD13E8DC400039CAC9 /* CoreData.framework */; };
+		34B974DA13F0C67100FE901E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FB32CE13E8DC400039CAC9 /* Foundation.framework */; };
+		34B9763F13F0C75100FE901E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B9763E13F0C75100FE901E /* Cocoa.framework */; };
+		34FB32D413E8DC400039CAC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34FB32D213E8DC400039CAC9 /* InfoPlist.strings */; };
+		34FB32D713E8DC400039CAC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB32D613E8DC400039CAC9 /* main.m */; };
+		34FB32DA13E8DC400039CAC9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 34FB32D813E8DC400039CAC9 /* Credits.rtf */; };
+		34FB32DD13E8DC400039CAC9 /* MusicRapperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB32DC13E8DC400039CAC9 /* MusicRapperAppDelegate.m */; };
+		34FB32E013E8DC400039CAC9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34FB32DE13E8DC400039CAC9 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3400155813E8E9AC007924CE /* MusicRapperApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicRapperApplication.h; sourceTree = "<group>"; };
+		3400155913E8E9AC007924CE /* MusicRapperApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicRapperApplication.m; sourceTree = "<group>"; };
+		347FAFC413E909D900795C4A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		347FAFC813E90C0B00795C4A /* gm-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "gm-icon.icns"; sourceTree = "<group>"; };
+		34B9763E13F0C75100FE901E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		34FB32C513E8DC400039CAC9 /* MusicRapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicRapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34FB32CC13E8DC400039CAC9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		34FB32CD13E8DC400039CAC9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		34FB32CE13E8DC400039CAC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		34FB32D113E8DC400039CAC9 /* MusicRapper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicRapper-Info.plist"; sourceTree = "<group>"; };
+		34FB32D313E8DC400039CAC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		34FB32D513E8DC400039CAC9 /* MusicRapper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicRapper-Prefix.pch"; sourceTree = "<group>"; };
+		34FB32D613E8DC400039CAC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		34FB32D913E8DC400039CAC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		34FB32DB13E8DC400039CAC9 /* MusicRapperAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicRapperAppDelegate.h; sourceTree = "<group>"; };
+		34FB32DC13E8DC400039CAC9 /* MusicRapperAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicRapperAppDelegate.m; sourceTree = "<group>"; };
+		34FB32DF13E8DC400039CAC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		34FB32C213E8DC400039CAC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				347FAFC513E909D900795C4A /* WebKit.framework in Frameworks */,
+				34B974D813F0C67000FE901E /* AppKit.framework in Frameworks */,
+				34B974D913F0C67100FE901E /* CoreData.framework in Frameworks */,
+				34B974DA13F0C67100FE901E /* Foundation.framework in Frameworks */,
+				34B9763F13F0C75100FE901E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		34FB32BA13E8DC400039CAC9 = {
+			isa = PBXGroup;
+			children = (
+				34FB32CF13E8DC400039CAC9 /* MusicRapper */,
+				34FB32C813E8DC400039CAC9 /* Frameworks */,
+				34FB32C613E8DC400039CAC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		34FB32C613E8DC400039CAC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34FB32C513E8DC400039CAC9 /* MusicRapper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34FB32C813E8DC400039CAC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34B9763E13F0C75100FE901E /* Cocoa.framework */,
+				347FAFC413E909D900795C4A /* WebKit.framework */,
+				34FB32CB13E8DC400039CAC9 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34FB32CB13E8DC400039CAC9 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34FB32CC13E8DC400039CAC9 /* AppKit.framework */,
+				34FB32CD13E8DC400039CAC9 /* CoreData.framework */,
+				34FB32CE13E8DC400039CAC9 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		34FB32CF13E8DC400039CAC9 /* MusicRapper */ = {
+			isa = PBXGroup;
+			children = (
+				34FB32DB13E8DC400039CAC9 /* MusicRapperAppDelegate.h */,
+				34FB32DC13E8DC400039CAC9 /* MusicRapperAppDelegate.m */,
+				3400155813E8E9AC007924CE /* MusicRapperApplication.h */,
+				3400155913E8E9AC007924CE /* MusicRapperApplication.m */,
+				34FB32DE13E8DC400039CAC9 /* MainMenu.xib */,
+				34FB32D013E8DC400039CAC9 /* Supporting Files */,
+			);
+			path = MusicRapper;
+			sourceTree = "<group>";
+		};
+		34FB32D013E8DC400039CAC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				347FAFC813E90C0B00795C4A /* gm-icon.icns */,
+				34FB32D113E8DC400039CAC9 /* MusicRapper-Info.plist */,
+				34FB32D213E8DC400039CAC9 /* InfoPlist.strings */,
+				34FB32D513E8DC400039CAC9 /* MusicRapper-Prefix.pch */,
+				34FB32D613E8DC400039CAC9 /* main.m */,
+				34FB32D813E8DC400039CAC9 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		34FB32C413E8DC400039CAC9 /* MusicRapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34FB32E313E8DC410039CAC9 /* Build configuration list for PBXNativeTarget "MusicRapper" */;
+			buildPhases = (
+				34FB32C113E8DC400039CAC9 /* Sources */,
+				34FB32C213E8DC400039CAC9 /* Frameworks */,
+				34FB32C313E8DC400039CAC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MusicRapper;
+			productName = MusicRapper;
+			productReference = 34FB32C513E8DC400039CAC9 /* MusicRapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		34FB32BC13E8DC400039CAC9 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 34FB32BF13E8DC400039CAC9 /* Build configuration list for PBXProject "MusicRapper" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 34FB32BA13E8DC400039CAC9;
+			productRefGroup = 34FB32C613E8DC400039CAC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				34FB32C413E8DC400039CAC9 /* MusicRapper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		34FB32C313E8DC400039CAC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34FB32D413E8DC400039CAC9 /* InfoPlist.strings in Resources */,
+				34FB32DA13E8DC400039CAC9 /* Credits.rtf in Resources */,
+				34FB32E013E8DC400039CAC9 /* MainMenu.xib in Resources */,
+				347FAFC913E90C0B00795C4A /* gm-icon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		34FB32C113E8DC400039CAC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34FB32D713E8DC400039CAC9 /* main.m in Sources */,
+				34FB32DD13E8DC400039CAC9 /* MusicRapperAppDelegate.m in Sources */,
+				3400155A13E8E9AC007924CE /* MusicRapperApplication.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		34FB32D213E8DC400039CAC9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34FB32D313E8DC400039CAC9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		34FB32D813E8DC400039CAC9 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34FB32D913E8DC400039CAC9 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		34FB32DE13E8DC400039CAC9 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34FB32DF13E8DC400039CAC9 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		34FB32E113E8DC400039CAC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		34FB32E213E8DC400039CAC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+		34FB32E413E8DC410039CAC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MusicRapper/MusicRapper-Prefix.pch";
+				INFOPLIST_FILE = "MusicRapper/MusicRapper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		34FB32E513E8DC410039CAC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MusicRapper/MusicRapper-Prefix.pch";
+				INFOPLIST_FILE = "MusicRapper/MusicRapper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.5;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		34FB32BF13E8DC400039CAC9 /* Build configuration list for PBXProject "MusicRapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34FB32E113E8DC400039CAC9 /* Debug */,
+				34FB32E213E8DC400039CAC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34FB32E313E8DC410039CAC9 /* Build configuration list for PBXNativeTarget "MusicRapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34FB32E413E8DC410039CAC9 /* Debug */,
+				34FB32E513E8DC410039CAC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 34FB32BC13E8DC400039CAC9 /* Project object */;
+}
