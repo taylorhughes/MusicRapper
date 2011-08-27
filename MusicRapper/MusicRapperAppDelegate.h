@@ -17,11 +17,15 @@
   BOOL mini;
   NSRect miniRect;
   NSRect fullRect;
+
+  NSTimer *timer;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet WebView *webView;
+@property (retain) NSTimer *timer;
 
+- (void) maybeAdvance:(id)sender;
 - (void) playPause:(id)sender;
 - (void) nextSong:(id)sender;
 - (void) previousSong:(id)sender;

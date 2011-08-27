@@ -12,6 +12,7 @@
 
 @synthesize window;
 @synthesize webView;
+@synthesize timer;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -29,6 +30,12 @@
   miniRect.origin.y = miniRect.origin.y + miniRect.size.height - NEW_HEIGHT;
   miniRect.size.height = NEW_HEIGHT;
   miniRect.size.width = NEW_WIDTH;
+
+  self.timer = [NSTimer scheduledTimerWithTimeInterval:0.4
+                                                target:self
+                                              selector:@selector(maybeAdvance:)
+                                              userInfo:nil
+                                               repeats:YES];
 }
 
 - (void) playPause:(id)sender {
@@ -40,7 +47,46 @@
 }
 
 - (void) previousSong:(id)sender {
-  [[webView windowScriptObject] evaluateWebScript:@"SJBpost('prevSong');"];  
+  [[webView windowScriptObject] evaluateWebScript:@"SJBpost('prevSong');"];
+}
+
+- (void) maybeAdvance:(id)sender {
+  //
+  // WARNING: This is pretty crazy. This fixes a bug where the
+  // player keeps playing past the end of the song instead of
+  // advancing to the next track.
+  //
+  NSString *javascript = @"(function(){"
+    "var convertToSeconds = function(el) {"
+      "var time = (el && el.innerHTML) || '';"
+      ""
+      "var pieces = [];"
+      "var rawPieces = time.split(':');"
+      "for (var i = 0; i < rawPieces.length; i++) {"
+        "var str = rawPieces[i].replace(/\\D+/, '');"
+        "if (str != '') {"
+          "pieces.push(parseInt(str, 10));"
+        "}"
+      "}"
+      "if (!pieces.length) { return 0; }"
+      ""
+      "var total = 0;"
+      "for (var i = 0; i < pieces.length; i++) {"
+        "if (i > 0) { total *= 60; }"
+        "total += pieces[i];"
+      "}"
+      "return total;"
+    "};"
+    "var currentTime = convertToSeconds(document.getElementById('currentTime'));"
+    "var duration = convertToSeconds(document.getElementById('duration'));"
+    "return (currentTime && duration && currentTime > duration);"
+  "})()";
+  NSObject *result = [[webView windowScriptObject] evaluateWebScript:javascript];
+
+  if ([result isEqualTo:[NSNumber numberWithInt:1]]) {
+    NSLog(@"Advanced to the next track using magic.");
+    [self nextSong:sender];
+  }
 }
 
 - (void) setMini:(BOOL)shouldBeMini {
