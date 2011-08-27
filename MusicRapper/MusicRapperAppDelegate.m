@@ -31,6 +31,7 @@
   miniRect.size.height = NEW_HEIGHT;
   miniRect.size.width = NEW_WIDTH;
 
+  lastAdvanced = 0;
   self.timer = [NSTimer scheduledTimerWithTimeInterval:0.4
                                                 target:self
                                               selector:@selector(maybeAdvance:)
@@ -51,6 +52,12 @@
 }
 
 - (void) maybeAdvance:(id)sender {
+  NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+  if (now - lastAdvanced < 4.0) {
+    // Don't attempt to hit "Next" a bunch of times in a row.
+    return;
+  }
+
   //
   // WARNING: This is pretty crazy. This fixes a bug where the
   // player keeps playing past the end of the song instead of
@@ -86,6 +93,7 @@
   if ([result isEqualTo:[NSNumber numberWithInt:1]]) {
     NSLog(@"Advanced to the next track using magic.");
     [self nextSong:sender];
+    lastAdvanced = now;
   }
 }
 

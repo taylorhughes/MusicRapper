@@ -19,6 +19,7 @@
   NSRect fullRect;
 
   NSTimer *timer;
+  NSTimeInterval lastAdvanced;
 }
 
 @property (assign) IBOutlet NSWindow *window;
