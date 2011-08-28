@@ -27,13 +27,13 @@ static CGFloat MINI_WIDTH = 440.0;
   [[webView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlText]]];
 
   mini = NO;
+  hasLoadedMini = NO;
   
   // Remember initial large size.
-  [window setFrameUsingName:PREF_WINDOW_FRAME_FULL];
-  fullRect = [window frame];
-
-  // Try to load this later.
-  miniRect = NSRectFromCGRect(CGRectZero);
+  if (![window setFrameUsingName:PREF_WINDOW_FRAME_FULL]) {
+    // If this preference hasn't been saved yet, save it now.
+    [window saveFrameUsingName:PREF_WINDOW_FRAME_FULL];
+  }
 
   lastAdvanced = 0;
   self.timer = [NSTimer scheduledTimerWithTimeInterval:0.4
@@ -108,19 +108,24 @@ static CGFloat MINI_WIDTH = 440.0;
     [[window contentView] setAutoresizesSubviews:NO];
     [window setShowsResizeIndicator:NO];
 
-    if (!miniRect.size.width && !miniRect.size.height) {
-      // Hasn't been loaded yet. Attempt to laod from preference.
-      [window setFrameUsingName:PREF_WINDOW_FRAME_MINI];
+    // Hasn't been loaded yet. Attempt to laod from preference.
+    BOOL loadedFromPref = [window setFrameUsingName:PREF_WINDOW_FRAME_MINI];
 
-      miniRect = [window frame];
+    if (!hasLoadedMini) {
+      hasLoadedMini = YES;
+
+      NSRect miniRect = [window frame];
       // Always set the height and width in case this ever changes.
       miniRect.size.height = MINI_HEIGHT;
       miniRect.size.width = MINI_WIDTH;
-    }
+      [window setFrame:miniRect display:YES];
 
-    [window setFrame:miniRect display:YES];
+      if (!loadedFromPref) {
+        [window saveFrameUsingName:PREF_WINDOW_FRAME_MINI];
+      }
+    }
   } else {
-    [window setFrame:fullRect display:YES];
+    [window setFrameUsingName:PREF_WINDOW_FRAME_FULL];
 
     [[window contentView] setAutoresizesSubviews:YES];
     [window setShowsResizeIndicator:YES];
@@ -139,17 +144,14 @@ static CGFloat MINI_WIDTH = 440.0;
 - (void) windowDidResize:(NSNotification *)notification {
   if (!mini) {
     [window saveFrameUsingName:PREF_WINDOW_FRAME_FULL];
-    fullRect = [window frame];
   }
 }
 
 - (void) windowDidMove:(NSNotification *)notification {
   if (!mini) {
     [window saveFrameUsingName:PREF_WINDOW_FRAME_FULL];
-    fullRect = [window frame];
   } else {
     [window saveFrameUsingName:PREF_WINDOW_FRAME_MINI];
-    miniRect = [window frame];
   }
 }
 
