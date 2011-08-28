@@ -14,6 +14,13 @@
 @synthesize webView;
 @synthesize timer;
 
+static NSString *PREF_WINDOW_FRAME_FULL = @"windowFrameFull";
+static NSString *PREF_WINDOW_FRAME_MINI = @"windowFrameMini";
+
+static CGFloat MINI_HEIGHT = 55.0 + 22.0;
+static CGFloat MINI_WIDTH = 440.0;
+
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
   NSString *urlText = @"http://music.google.com/";
@@ -22,14 +29,11 @@
   mini = NO;
   
   // Remember initial large size.
+  [window setFrameUsingName:PREF_WINDOW_FRAME_FULL];
   fullRect = [window frame];
-  miniRect = [window frame];
 
-  CGFloat NEW_HEIGHT = 55.0 + 22.0;
-  CGFloat NEW_WIDTH = 440.0;
-  miniRect.origin.y = miniRect.origin.y + miniRect.size.height - NEW_HEIGHT;
-  miniRect.size.height = NEW_HEIGHT;
-  miniRect.size.width = NEW_WIDTH;
+  // Try to load this later.
+  miniRect = NSRectFromCGRect(CGRectZero);
 
   lastAdvanced = 0;
   self.timer = [NSTimer scheduledTimerWithTimeInterval:0.4
@@ -104,6 +108,16 @@
     [[window contentView] setAutoresizesSubviews:NO];
     [window setShowsResizeIndicator:NO];
 
+    if (!miniRect.size.width && !miniRect.size.height) {
+      // Hasn't been loaded yet. Attempt to laod from preference.
+      [window setFrameUsingName:PREF_WINDOW_FRAME_MINI];
+
+      miniRect = [window frame];
+      // Always set the height and width in case this ever changes.
+      miniRect.size.height = MINI_HEIGHT;
+      miniRect.size.width = MINI_WIDTH;
+    }
+
     [window setFrame:miniRect display:YES];
   } else {
     [window setFrame:fullRect display:YES];
@@ -124,14 +138,17 @@
 
 - (void) windowDidResize:(NSNotification *)notification {
   if (!mini) {
+    [window saveFrameUsingName:PREF_WINDOW_FRAME_FULL];
     fullRect = [window frame];
   }
 }
 
 - (void) windowDidMove:(NSNotification *)notification {
   if (!mini) {
+    [window saveFrameUsingName:PREF_WINDOW_FRAME_FULL];
     fullRect = [window frame];
   } else {
+    [window saveFrameUsingName:PREF_WINDOW_FRAME_MINI];
     miniRect = [window frame];
   }
 }
