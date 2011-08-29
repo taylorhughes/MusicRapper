@@ -15,9 +15,8 @@
   WebView *webView;
 
   BOOL mini;
-  NSRect miniRect;
-  NSRect fullRect;
-
+  BOOL hasLoadedMini;
+  
   NSTimer *timer;
   NSTimeInterval lastAdvanced;
 }
